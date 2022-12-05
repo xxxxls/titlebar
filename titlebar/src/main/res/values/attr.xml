@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="SuperTitleBar" tools:ignore="ResourceName">
+        <!--适配器类型-->
+        <attr name="titlebar_adapter" format="integer" />
+
+        <!--标题文本-->
+        <attr name="titlebar_title" format="string" />
+        <!--标题文本水平方向内边距-->
+        <attr name="titlebar_title_horizontal_padding" format="dimension" />
+        <!--标题文本外观-->
+        <attr name="titlebar_title_text_appearance" format="reference" />
+
+        <!--左标题文本-->
+        <attr name="titlebar_left_text" format="string" />
+        <!--左标题文本外观-->
+        <attr name="titlebar_left_text_appearance" format="reference" />
+        <!--左标题图标-->
+        <attr name="titlebar_left_icon" format="reference" />
+        <!--左标题图标字体-->
+        <attr name="titlebar_left_icon_font" format="string" />
+        <!--左标题图标宽度-->
+        <attr name="titlebar_left_icon_width" format="dimension" />
+        <!--左标题图标高度-->
+        <attr name="titlebar_left_icon_height" format="dimension" />
+        <!--左标题图标方向-->
+        <attr name="titlebar_left_icon_gravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="start" value="0x00800003" />
+            <flag name="end" value="0x00800005" />
+        </attr>
+        <!--左标题图标与文本的边距-->
+        <attr name="titlebar_left_icon_padding" format="dimension" />
+        <!--左标题图标背景-->
+        <attr name="titlebar_left_background" format="reference|color" />
+        <!--左标题条目的左右内边距-->
+        <attr name="titlebar_left_horizontal_padding" format="dimension" />
+
+        <!--右标题文本-->
+        <attr name="titlebar_right_text" format="string" />
+        <!--右标题文本外观-->
+        <attr name="titlebar_right_text_appearance" format="reference" />
+        <!--右标题图标-->
+        <attr name="titlebar_right_icon" format="reference" />
+        <!--右标题图标字体-->
+        <attr name="titlebar_right_icon_font" format="string" />
+        <!--右标题图标宽度-->
+        <attr name="titlebar_right_icon_width" format="dimension" />
+        <!--右标题图标高度-->
+        <attr name="titlebar_right_icon_height" format="dimension" />
+        <!--右标题图标方向-->
+        <attr name="titlebar_right_icon_gravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="start" value="0x00800003" />
+            <flag name="end" value="0x00800005" />
+        </attr>
+        <!--右标题图标与文本的边距-->
+        <attr name="titlebar_right_icon_padding" format="dimension" />
+        <!--右标题图标背景-->
+        <attr name="titlebar_right_background" format="reference|color" />
+        <!--右标题条目的左右内边距-->
+        <attr name="titlebar_right_horizontal_padding" format="dimension" />
+
+        <!--底部分割线是否可见-->
+        <attr name="titlebar_line_visible" format="boolean" />
+        <!--底部分割线背景-->
+        <attr name="titlebar_line_background" format="reference|color" />
+        <!--底部分割线高度-->
+        <attr name="titlebar_line_height" format="dimension" />
+
+    </declare-styleable>
+
+
+</resources>

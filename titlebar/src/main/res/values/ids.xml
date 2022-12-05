@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--视图-->
+    <item name="titlebar" type="id" />
+    <!--左视图-->
+    <item name="titlebar_left_view" type="id" />
+
+    <!--右视图-->
+    <item name="titlebar_right_view" type="id" />
+
+    <!--分割线视图-->
+    <item name="titlebar_line_view" type="id" />
+
+    <!--标题视图-->
+    <item name="titlebar_title_view" type="id" />
+</resources>

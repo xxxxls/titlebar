@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 默认标题栏 -->
+    <style name="app_title_bar">
+        <item name="android:id">@id/titlebar</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <!--标题文本外观-->
+        <item name="titlebar_title_text_appearance">@style/app_titlebar_title_text</item>
+        <!--标题水平内间距-->
+        <item name="titlebar_title_horizontal_padding">16dp</item>
+        <!--左标题文本外观-->
+        <item name="titlebar_left_text_appearance">@style/app_titlebar_left_text</item>
+        <!--右标题文本外观-->
+        <item name="titlebar_right_text_appearance">@style/app_titlebar_right_text</item>
+        <!--左标题图片与文本间距-->
+        <item name="titlebar_left_icon_padding">2dp</item>
+        <!--左标题图片宽度-->
+        <item name="titlebar_left_icon_width">10dp</item>
+        <!--左标题图片高度-->
+        <item name="titlebar_left_icon_height">10dp</item>
+        <!--左标题图片方向-->
+        <item name="titlebar_left_icon_gravity">start</item>
+        <!--左标题水平内间距-->
+        <item name="titlebar_left_horizontal_padding">16dp</item>
+        <!--右标题图片与文本间距-->
+        <item name="titlebar_right_icon_padding">2dp</item>
+        <!--右标题图片宽度-->
+        <item name="titlebar_right_icon_width">10dp</item>
+        <!--右标题图片高度-->
+        <item name="titlebar_right_icon_height">10dp</item>
+        <!--左标题图片方向-->
+        <item name="titlebar_right_icon_gravity">end</item>
+        <!--右标题水平内间距-->
+        <item name="titlebar_right_horizontal_padding">16dp</item>
+        <!--分割线可见性-->
+        <item name="titlebar_line_visible">true</item>
+        <!--分割线背景-->
+        <item name="titlebar_line_background">#8D8B9B</item>
+        <!--分割线高度-->
+        <item name="titlebar_line_height">1px</item>
+    </style>
+
+
+    <!-- 默认标题栏 -->
+    <style name="app_title_bar_back" parent="app_title_bar">
+        <!--左标题图标-->
+        <item name="titlebar_left_icon">@android:drawable/ic_menu_close_clear_cancel</item>
+    </style>
+
+    <style name="app_titlebar_left_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#0cc8ee</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="app_titlebar_title_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#333333</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="app_titlebar_right_text">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#999999</item>
+    </style>
+</resources>

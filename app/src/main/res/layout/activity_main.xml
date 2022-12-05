@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xxxxls.app.MainActivity">
+
+    <com.xxxxls.titlebar.SuperTitleBar
+        android:id="@+id/titlebar_a"
+        style="@style/app_title_bar_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3B3650"
+        app:titlebar_left_icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:titlebar_line_background="@drawable/bg_test"
+        app:titlebar_right_text="帮助"
+        app:titlebar_title="标题栏标题栏标题标题标题栏栏标题栏标题栏标题栏" />
+
+    <com.xxxxls.titlebar.SuperTitleBar
+        android:id="@+id/titlebar_b"
+        style="@style/app_title_bar_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FD1684"
+        app:titlebar_left_icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:titlebar_left_text="返回"
+        app:titlebar_line_background="#ffffff"
+        app:titlebar_right_icon="@android:drawable/ic_menu_help"
+        app:titlebar_right_text="帮助"
+        app:titlebar_right_text_appearance="@style/app_titlebar_right_text"
+        app:titlebar_title="@string/app_name" />
+
+    <com.xxxxls.titlebar.SuperTitleBar
+        android:id="@+id/titlebar_c"
+        style="@style/app_title_bar_back"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
+        app:titlebar_left_icon="@android:drawable/ic_menu_close_clear_cancel"
+        app:titlebar_left_text="返回"
+        app:titlebar_line_visible="false"
+        app:titlebar_right_icon="@android:drawable/ic_menu_help"
+        app:titlebar_title="我比较矮" />
+
+    <com.xxxxls.titlebar.SuperTitleBar
+        android:id="@+id/titlebar_d"
+        style="@style/app_title_bar"
+        android:layout_marginTop="10dp"
+        android:background="#3B3650"
+        app:titlebar_line_background="@drawable/ic_launcher_background"
+        app:titlebar_title="Title" />
+
+    <com.xxxxls.titlebar.SuperTitleBar
+        android:id="@+id/titlebar_e"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:titlebar_left_text="返回"
+        app:titlebar_left_text_appearance="@style/app_titlebar_left_text"
+        app:titlebar_right_icon="@android:drawable/ic_menu_help"
+        app:titlebar_title="默认样式默认样式默认样式默认样式">
+    </com.xxxxls.titlebar.SuperTitleBar>
+</LinearLayout>
