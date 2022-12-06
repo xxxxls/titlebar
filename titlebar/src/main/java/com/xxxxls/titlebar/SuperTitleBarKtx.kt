@@ -1,29 +1,6 @@
 package com.xxxxls.titlebar
 
-import android.app.Activity
 import android.view.View
-import androidx.annotation.IdRes
-import androidx.fragment.app.Fragment
-
-/**
- *
- * @author Max
- * @date 2020-01-07.
- */
-
-/**
- * Activity - 获取标题栏
- */
-fun Activity?.findTitleBar(@IdRes id: Int = R.id.titlebar): SuperTitleBar? {
-    return this?.findViewById<SuperTitleBar>(id)
-}
-
-/**
- * Fragment - 获取标题栏
- */
-fun Fragment?.findTitleBar(@IdRes id: Int = R.id.titlebar): SuperTitleBar? {
-    return this?.view?.findViewById<SuperTitleBar>(id)
-}
 
 /**
  * 设置左视图点击事件（注意：会覆盖其他点击事件，否则请使用@setOnTitleBarListener）
