@@ -80,7 +80,6 @@ open class DefaultTitleBarAdapter : StandardTitleBarAdapter() {
         )
         // 背景
         val background = typedArray.getDrawable(R.styleable.SuperTitleBar_titlebar_left_background)
-            ?: view.context.getDrawableById(R.drawable.titlebar_ripple_default)
         // 图标宽度
         val iconWidth = typedArray.getDimensionPixelSize(
             R.styleable.SuperTitleBar_titlebar_left_icon_width, 0
@@ -112,7 +111,9 @@ open class DefaultTitleBarAdapter : StandardTitleBarAdapter() {
             setText(text)
             SuperTitleBarTool.setDrawableSize(icon, iconWidth, iconHeight)
             SuperTitleBarTool.setTextCompoundDrawable(this, icon, iconGravity)
-            setBackground(background)
+            if (background != null) {
+                setBackground(background)
+            }
             if (textAppendable != null) {
                 TextViewCompat.setTextAppearance(this, textAppendable)
             }
@@ -141,7 +142,6 @@ open class DefaultTitleBarAdapter : StandardTitleBarAdapter() {
         )
         // 背景
         val background = typedArray.getDrawable(R.styleable.SuperTitleBar_titlebar_right_background)
-            ?: view.context.getDrawableById(R.drawable.titlebar_ripple_default)
         // 图标宽度
         val iconWidth = typedArray.getDimensionPixelSize(
             R.styleable.SuperTitleBar_titlebar_right_icon_width, 0
@@ -173,7 +173,9 @@ open class DefaultTitleBarAdapter : StandardTitleBarAdapter() {
             setText(text)
             SuperTitleBarTool.setDrawableSize(icon, iconWidth, iconHeight)
             SuperTitleBarTool.setTextCompoundDrawable(this, icon, iconGravity)
-            setBackground(background)
+            if (background != null) {
+                setBackground(background)
+            }
             if (textAppendable != null) {
                 TextViewCompat.setTextAppearance(this, textAppendable)
             }
