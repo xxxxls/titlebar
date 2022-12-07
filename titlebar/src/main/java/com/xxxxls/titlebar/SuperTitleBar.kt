@@ -17,7 +17,7 @@ import java.util.*
  * @author Max
  * @date 2020-01-03.
  */
-open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChangeListener {
+open class SuperTitleBar : FrameLayout, View.OnLayoutChangeListener {
 
     companion object {
 
@@ -25,7 +25,7 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
         private val adapters: ArrayList<TitleBarAdapter> by lazy { ArrayList() }
 
         // 默认适配器
-        private var defaultAdapter: TitleBarAdapter = DefaultTitleBarAdapter()
+        private var defaultAdapter: TitleBarAdapter? = null
 
         /**
          * 设置默认适配器（修改后只对新视图生效）
@@ -40,10 +40,22 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
         fun addAdapter(adapter: TitleBarAdapter) {
             adapters.add(adapter)
         }
+
+        /**
+         * 默认视图
+         */
+        fun getDefaultAdapterNotNull(): TitleBarAdapter {
+            var adapter = defaultAdapter
+            if (adapter == null) {
+                adapter = DefaultTitleBarAdapter()
+                defaultAdapter = adapter
+            }
+            return adapter
+        }
     }
 
     // 当前适配器
-    private var adapter: TitleBarAdapter = defaultAdapter
+    private lateinit var adapter: TitleBarAdapter
 
     // 左右图标宽高
     private var leftIconWidth = 0
@@ -52,9 +64,6 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
     private var rightIconWidth = 0
     private var rightIconHeight = 0
     private var rightIconGravity = Gravity.START
-
-    // 标题栏事件
-    private var onTitleBarListener: OnTitleBarListener? = null
 
     constructor(context: Context) : this(context, null)
     constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, 0)
@@ -81,22 +90,31 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
             val adapterId = typedArray.getInt(R.styleable.SuperTitleBar_titlebar_adapter, 0)
             adapters.firstOrNull {
                 it.getId() == adapterId
-            } ?: defaultAdapter
+            } ?: getDefaultAdapterNotNull()
         } else {
-            defaultAdapter
+            getDefaultAdapterNotNull()
         }
     }
 
     protected open fun loadAttrs(typedArray: TypedArray) {
         leftIconWidth =
-            typedArray.getDimensionPixelSize(R.styleable.SuperTitleBar_titlebar_left_icon_width, 0)
+            typedArray.getDimensionPixelSize(
+                R.styleable.SuperTitleBar_titlebar_left_icon_width,
+                0
+            )
         leftIconHeight =
-            typedArray.getDimensionPixelSize(R.styleable.SuperTitleBar_titlebar_left_icon_height, 0)
+            typedArray.getDimensionPixelSize(
+                R.styleable.SuperTitleBar_titlebar_left_icon_height,
+                0
+            )
         leftIconGravity = typedArray.getInt(
             R.styleable.SuperTitleBar_titlebar_left_icon_gravity, Gravity.START
         )
         rightIconWidth =
-            typedArray.getDimensionPixelSize(R.styleable.SuperTitleBar_titlebar_right_icon_width, 0)
+            typedArray.getDimensionPixelSize(
+                R.styleable.SuperTitleBar_titlebar_right_icon_width,
+                0
+            )
         rightIconHeight =
             typedArray.getDimensionPixelSize(
                 R.styleable.SuperTitleBar_titlebar_right_icon_height,
@@ -195,7 +213,10 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
     /**
      * 设置左图标
      */
-    open fun setLeftIcon(@DrawableRes resId: Int, gravity: Int = leftIconGravity): SuperTitleBar {
+    open fun setLeftIcon(
+        @DrawableRes resId: Int,
+        gravity: Int = leftIconGravity
+    ): SuperTitleBar {
         return setLeftIcon(context.getDrawableById(resId), gravity)
     }
 
@@ -234,7 +255,10 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
     /**
      * 设置右图标
      */
-    open fun setRightIcon(@DrawableRes resId: Int, gravity: Int = rightIconGravity): SuperTitleBar {
+    open fun setRightIcon(
+        @DrawableRes resId: Int,
+        gravity: Int = rightIconGravity
+    ): SuperTitleBar {
         return setRightIcon(context.getDrawableById(resId), gravity)
     }
 
@@ -251,35 +275,6 @@ open class SuperTitleBar : FrameLayout, View.OnClickListener, View.OnLayoutChang
      */
     internal open fun getAdapter(): TitleBarAdapter {
         return adapter
-    }
-
-    /**
-     * 设置标题栏事件监听
-     * @param listener 事件监听
-     */
-    fun setOnTitleBarListener(listener: OnTitleBarListener?): SuperTitleBar {
-        this.onTitleBarListener = listener
-        getLeftView().setOnClickListener(this)
-        getRightView().setOnClickListener(this)
-        getTitleView().setOnClickListener(this)
-        return this
-    }
-
-    override fun onClick(v: View?) {
-        when (v?.id) {
-            // 标题
-            R.id.titlebar_title_view -> {
-                onTitleBarListener?.onTitleClick(v)
-            }
-            // 左视图
-            R.id.titlebar_left_view -> {
-                onTitleBarListener?.onLeftClick(v)
-            }
-            // 右视图
-            R.id.titlebar_right_view -> {
-                onTitleBarListener?.onRightClick(v)
-            }
-        }
     }
 
     override fun onLayoutChange(

@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/bg_test.xml" value="0.21" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2947916666666667" />
         <entry key="titlebar/src/main/res/drawable/titlebar_ripple_default.xml" value="0.21" />
       </map>
